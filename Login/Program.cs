@@ -4,7 +4,7 @@ using System;
 
 namespace Login
 {
-    internal class Program
+    internal class Login
     {
         static void Main(string[] args)
         {
@@ -32,14 +32,15 @@ namespace Login
 
             if (hellohari.Text == "Hello hari!")
             {
-                Console.WriteLine("Logged in successfully, test passed");
+                Console.WriteLine(" ■ Login successful, test passed");
             }
             else
             {
-                Console.WriteLine("Login failed, test failed");
+                Console.WriteLine(" ■ Login failed, test failed");
             }
 
-            driver.Quit();
+            // Quit driver
+            // driver.Quit();
         }
     }
 }
