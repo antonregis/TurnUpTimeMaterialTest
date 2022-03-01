@@ -11,3 +11,4 @@ Happy path testing is used in this method.
 
 Screen recording of the script running:
 https://youtu.be/JB2fH5IC-Gg
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JB2fH5IC-Gg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
