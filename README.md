@@ -8,3 +8,6 @@ This basic C# test automation script performs the following on TurnUp website:
 4. **DeleteRecord**: Check if a user is able to delete the previous record.
 
 Happy path testing is used in this method.
+
+Screen recording of the script running:
+https://youtu.be/JB2fH5IC-Gg

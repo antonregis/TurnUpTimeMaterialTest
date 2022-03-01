@@ -3,9 +3,9 @@ using OpenQA.Selenium.Chrome;
 using System;
 using System.Threading;
 
-namespace EditRecord
+namespace DeleteRecord
 {
-    internal class EditRecord
+    internal class DeleteRecord
     {
         static void Main(string[] args)
         {
@@ -92,8 +92,8 @@ namespace EditRecord
             IWebElement lastpageButton = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span"));
             lastpageButton.Click();
 
-            // Delay 1 second to complete page loading to load needed elements
-            Thread.Sleep(1000);
+            // Delay 2 seconds to complete page loading to load needed elements
+            Thread.Sleep(2000);
 
             // Check if Material record input is correct
             IWebElement codeValue = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]"));
@@ -142,7 +142,7 @@ namespace EditRecord
             IWebElement editSaveButton = driver.FindElement(By.Id("SaveButton"));
             editSaveButton.Click();
 
-            // Delay 2 second to complete page loading so that editLastpageButton can be found
+            // Delay 2 seconds to complete page loading so that editLastpageButton can be found
             Thread.Sleep(2000);
 
             // Click 'Go to the last page' button
@@ -164,6 +164,41 @@ namespace EditRecord
             else
             {
                 Console.WriteLine(" ■ Edited Material record mismatched expected value, test failed");
+            }
+
+
+            // Delete record
+
+            // Click 'Go to the last page' button
+            IWebElement deleteLastpageButton = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span"));
+            deleteLastpageButton.Click();
+
+            // Delay 1 second to complete page loading
+            Thread.Sleep(1000);
+
+            // Delete previously entered record
+            IWebElement deleteButton = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td/a[2]"));
+            deleteButton.Click();
+
+            //Click Ok to PopUp Alert
+            IAlert simpleAlert = driver.SwitchTo().Alert();
+            simpleAlert.Accept();
+
+            // Delay 1 second to complete page loading 
+            Thread.Sleep(1000);
+
+            // Check deleted Material record is still there
+            IWebElement deleteCodeValue = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]"));
+            IWebElement deleteDescriptionValue = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[3]"));
+            IWebElement deletePriceValue = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[4]"));
+
+            if ((deleteCodeValue.Text != "PT024") && (deleteDescriptionValue.Text != "Chromium") && (deletePriceValue.Text != "$52.00"))
+            {
+                Console.WriteLine(" ■ Material record deleted, test passed");
+            }
+            else
+            {
+                Console.WriteLine(" ■ Material record not deleted, test failed");
             }
 
 
