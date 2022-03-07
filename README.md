@@ -1,13 +1,7 @@
 ## TurnUp Time & Materials Test
-#### Industry Connect Training - February 2022 (Week 2)
+#### Industry Connect Training - February 2022 (week 1-3)
 
-This basic C# test automation script performs the following on TurnUp website: 
-1. **Login**: Check if a user can Login to the website. 
-2. **CreateRecord**: Create 'Time & Materials' record then verify if the input is correct.
-3. **EditRecord**: Edit previous 'Time & Materials' record input and check if the change is correct.
-4. **DeleteRecord**: Check if a user is able to delete the previous record.
-
-Happy path testing is used in this method.
-
-Screen recording of the script running:
-https://youtu.be/JB2fH5IC-Gg
+In this repository contains all the lesson projects made in weeks 1-3. This test automation performs a Login to TurnUp website and administer "Time & Materials" records by creating, editing and deleting records. There are different versions of this test automation starting from the most Basic method to NUnit test framework. These versions or projects are segrated by folders:
+1. **Basic** 
+2. **Page Object Model**
+3. **NUnit test framework**
